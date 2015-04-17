@@ -12,6 +12,7 @@
     OR LOWER(Location) LIKE '%sudan%'
     OR LOWER(Location) LIKE '%khartoum%'
     OR LOWER(Location) LIKE '%bahri%';
+    OR LOWER(Location) LIKE '%omdurman%';
 
 ################################################################
 
@@ -22,17 +23,20 @@
     OR LOWER(Location) LIKE '%taza%'
     OR LOWER(Location) LIKE '%marrakech%'
     OR LOWER(Location) LIKE '%fes mORocco%';
+    OR LOWER(Location) LIKE '%agadir%';
+    OR LOWER(Location) LIKE '%المغرب%';
 
 ###################################################################
 
   SELECT * FROM users WHERE Location  LIKE '%Saudi Aribia%'
     OR LOWER(Location)  LIKE '%saudi aribia%'
-    OR LOWER(Location)  LIKE '%ksa'
+    OR LOWER(Location)  LIKE '%ksa%'
     OR LOWER(Location)  LIKE '%riyadh%'
     OR LOWER(Location)  LIKE '%jeddah%'
     OR LOWER(Location)  LIKE '%mecca%'
     OR LOWER(Location)  LIKE '%medina%' 
     OR LOWER(Location)  LIKE '%dammam%';
+    OR LOWER(Location)  LIKE '%الرياض%';
 
 ###################################################################
 
@@ -54,20 +58,31 @@
     OR LOWER(Location)  LIKE '%tlemcen%'
     OR LOWER(Location)  LIKE '%bejaia%'
     OR LOWER(Location)  LIKE '%ORan';
+    OR LOWER(Location)  LIKE '%الجزائر%';
 
 ###################################################################
 
   SELECT * FROM users WHERE Location  LIKE '%Egypt%'
     OR LOWER(Location)  LIKE '%egypt%'
-    OR LOWER(Location)  LIKE '%cairo'
+    OR LOWER(Location)  LIKE '%cairo%'
     OR LOWER(Location)  LIKE '%alexandria%'
     OR LOWER(Location)  LIKE '%pORt said%'
     OR LOWER(Location)  LIKE '%giza%'
     OR LOWER(Location)  LIKE '%fayyum%'
     OR LOWER(Location)  LIKE '%suez%'
     OR LOWER(Location)  LIKE '%al mansurah%'
-    OR LOWER(Location)  LIKE '%mansoura%';
+    OR LOWER(Location)  LIKE '%mansoura%'
     OR LOWER(Location)  LIKE '%sharm el sheikh%'
+    OR LOWER(location)  LIKE '%10th of Ramadan%'
+    OR LOWER(location)  LIKE '%aswan%'
+    OR LOWER(Location)  LIKE '%مصر%'
+    #places where there is a city names alexandria
+    AND LOWER(Location) NOT LIKE '%la%'
+    AND LOWER(Location) NOT LIKE '%ohio%'
+    AND LOWER(Location) NOT LIKE '%mn%'
+    AND LOWER(Location) NOT LIKE '%canada%'
+    AND LOWER(Location) NOT LIKE '%va%';
+
 
 ###################################################################
 
@@ -90,7 +105,7 @@
     OR LOWER(Location)  LIKE '%damascus'
     OR LOWER(Location)  LIKE '%latakia%'
     OR LOWER(Location)  LIKE '%aleppo%'
-    OR LOWER(Location)  LIKE 'al ladhiqiyah%';
+    OR LOWER(Location)  LIKE '%ladhiqiyah%';
 
 #######################################################################
 
@@ -102,7 +117,7 @@
     OR LOWER(Location)  LIKE '%sosah%'
     OR LOWER(Location)  LIKE 'kairouan%'
     OR LOWER(Location)  LIKE 'ettadhamen%'
-    OR LOWER(Location)  LIKE 'gab�s%'
+    OR LOWER(Location)  LIKE 'gabès%'
     OR LOWER(Location)  LIKE 'bizerte%'
     OR LOWER(Location)  LIKE 'aryanah%'
     OR LOWER(Location)  LIKE 'gafsa%'
@@ -131,7 +146,6 @@
     OR LOWER(Location)  LIKE '%palestine%'
     OR LOWER(Location)  LIKE '%ramallah'
     OR LOWER(Location)  LIKE '%al quds'
-    OR LOWER(Location)  LIKE '%jerusalem'
     OR LOWER(Location)  LIKE '%gaza'
     OR LOWER(Location)  LIKE '%nablus'
     OR LOWER(Location)  LIKE '%beit jala';
@@ -143,7 +157,7 @@
     OR LOWER(Location)  LIKE '%beirut'
     OR LOWER(Location)  LIKE '%tripoli'
     OR LOWER(Location)  LIKE '%sidon'
-    OR LOWER(Location)  LIKE '%zahl�'
+    OR LOWER(Location)  LIKE '%zahlé'
     OR LOWER(Location)  LIKE '%aley';
 
 ################################################################
@@ -185,7 +199,7 @@
     OR LOWER(Location)  LIKE '%comORos'
     OR LOWER(Location)  LIKE '%anjouan'
     OR LOWER(Location)  LIKE '%grande comORe'
-    OR LOWER(Location)  LIKE '%moh�li';
+    OR LOWER(Location)  LIKE '%mohéli';
 
 ################################################################
 
@@ -278,7 +292,7 @@
      OR LOWER(location) LIKE ('%sosah%') 
      OR LOWER(location) LIKE ('kairouan%') 
      OR LOWER(location) LIKE ('ettadhamen%') 
-     OR LOWER(location) LIKE ('gab�s%') 
+     OR LOWER(location) LIKE ('gabès%') 
      OR LOWER(location) LIKE ('bizerte%') 
      OR LOWER(location) LIKE ('aryanah%') 
      OR LOWER(location) LIKE ('gafsa%') 
@@ -302,7 +316,7 @@
      OR LOWER(location) LIKE ('%beirut') 
      OR LOWER(location) LIKE ('%tripoli')
      OR LOWER(location) LIKE ('%sidon')
-     OR LOWER(location) LIKE ('%zahl�')
+     OR LOWER(location) LIKE ('%zahlé')
      OR LOWER(location) LIKE ('%aley')
      OR LOWER(location) LIKE ('%oman')
      OR LOWER(location) LIKE ('%muscat')
@@ -320,7 +334,7 @@
      OR LOWER(location) LIKE ('%comORos')
      OR LOWER(location) LIKE ('%anjouan')
      OR LOWER(location) LIKE ('%grande comORe')
-     OR LOWER(location) LIKE ('%moh�li')
+     OR LOWER(location) LIKE ('%mohéli')
      OR LOWER(location) LIKE ('%yemen')
      OR LOWER(location) LIKE ('%Sanaa%')
      OR LOWER(location) LIKE ('%taizz')
@@ -404,7 +418,7 @@
        OR LOWER(location) LIKE ('%sosah%') 
        OR LOWER(location) LIKE ('kairouan%') 
        OR LOWER(location) LIKE ('ettadhamen%') 
-       OR LOWER(location) LIKE ('gab�s%') 
+       OR LOWER(location) LIKE ('gabès%') 
        OR LOWER(location) LIKE ('bizerte%') 
        OR LOWER(location) LIKE ('aryanah%') 
        OR LOWER(location) LIKE ('gafsa%') 
@@ -428,7 +442,7 @@
        OR LOWER(location) LIKE ('%beirut') 
        OR LOWER(location) LIKE ('%tripoli')
        OR LOWER(location) LIKE ('%sidon')
-       OR LOWER(location) LIKE ('%zahl�')
+       OR LOWER(location) LIKE ('%zahlé')
        OR LOWER(location) LIKE ('%aley')
        OR LOWER(location) LIKE ('%oman')
        OR LOWER(location) LIKE ('%muscat')
@@ -446,7 +460,7 @@
        OR LOWER(location) LIKE ('%comORos')
        OR LOWER(location) LIKE ('%anjouan')
        OR LOWER(location) LIKE ('%grande comORe')
-       OR LOWER(location) LIKE ('%moh�li')
+       OR LOWER(location) LIKE ('%mohéli')
        OR LOWER(location) LIKE ('%yemen')
        OR LOWER(location) LIKE ('%Sanaa%')
        OR LOWER(location) LIKE ('%taizz')
