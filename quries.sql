@@ -13,6 +13,8 @@
     OR LOWER(Location) LIKE '%khartoum%'
     OR LOWER(Location) LIKE '%bahri%';
     OR LOWER(Location) LIKE '%omdurman%';
+    # Execluding users from south sudan
+    AND LOWER(Location) NOT LIKE '%south sudan%'
 
 ################################################################
 
@@ -76,12 +78,12 @@
     OR LOWER(location)  LIKE '%10th of Ramadan%'
     OR LOWER(location)  LIKE '%aswan%'
     OR LOWER(Location)  LIKE '%مصر%'
-    #places where there is a city names alexandria
-    AND LOWER(Location) NOT LIKE '%la%'
-    AND LOWER(Location) NOT LIKE '%ohio%'
-    AND LOWER(Location) NOT LIKE '%mn%'
-    AND LOWER(Location) NOT LIKE '%canada%'
-    AND LOWER(Location) NOT LIKE '%va%';
+    # Execluding places where there is a city named alexandria
+    OR LOWER(Location) NOT LIKE '%la%'
+    OR LOWER(Location) NOT LIKE '%ohio%'
+    OR LOWER(Location) NOT LIKE '%mn%'
+    OR LOWER(Location) NOT LIKE '%canada%'
+    OR LOWER(Location) NOT LIKE '%va%';
 
 
 ###################################################################
@@ -222,142 +224,16 @@
     OR LOWER(Location)  LIKE '%mogadishu';
 
 
-
-
-
-
 ################################################################
-################# TOTAL Arab Psots 103,908 #####################
+######### Combining above quiries to match Arab users ##########
 ################################################################
 
-  SELECT COUNT(*) FROM Posts WHERE Posts.OwnerUserId IN (SELECT id FROM (SELECT id, Location FROM users 
-     WHERE LOWER(location) LIKE ('%sudan%')
-     OR LOWER(Location) LIKE ('%khartoum%')
-     OR LOWER(location) LIKE ('%bahri%')
-     OR LOWER(location) LIKE ('%mORocco%') 
-     OR LOWER(location) LIKE ('%casablanca%') 
-     OR LOWER(location) LIKE ('%rabat%') 
-     OR LOWER(location) LIKE ('%Taza%')
-     OR LOWER(location) LIKE ('%marrakech%') 
-     OR LOWER(location) LIKE ('%fes mORocco%') 
-     OR LOWER(location) LIKE ('%saudi aribia%') 
-     OR LOWER(location) LIKE ('%ksa') 
-     OR LOWER(location) LIKE ('%riyadh%') 
-     OR LOWER(location) LIKE ('%jeddah%') 
-     OR LOWER(location) LIKE ('%mecca%') 
-     OR LOWER(location) LIKE ('%medina%') 
-     OR LOWER(location) LIKE ('%dammam%') 
-     OR LOWER(location) LIKE ('%iraq%') 
-     OR LOWER(location) LIKE ('%baghdad') 
-     OR LOWER(location) LIKE ('%basra%') 
-     OR LOWER(location) LIKE ('%kirkuk%') 
-     OR LOWER(location) LIKE ('%fallujah%') 
-     OR LOWER(location) LIKE ('%mosul%') 
-     OR LOWER(location) LIKE ('%algeria%') 
-     OR LOWER(location) LIKE ('%alger') 
-     OR LOWER(location) LIKE ('%constantine%') 
-     OR LOWER(location) LIKE ('%annaba%') 
-     OR LOWER(location) LIKE ('%tlemcen%')
-     OR LOWER(location) LIKE ('%bejaia%') 
-     OR LOWER(location) LIKE ('%ORan') 
-     OR LOWER(location) LIKE ('%egypt%')
-     OR LOWER(location) LIKE ('%cairo') 
-     OR LOWER(location) LIKE ('%alexandria%') 
-     OR LOWER(location) LIKE ('%pORt said%') 
-     OR LOWER(location) LIKE ('%giza%') 
-     OR LOWER(location) LIKE ('%fayyum%') 
-     OR LOWER(location) LIKE ('%suez%') 
-     OR LOWER(location) LIKE ('%al mansurah%') 
-     OR LOWER(location) LIKE ('%mansoura%') 
-     OR LOWER(location) LIKE ('%sharm el sheikh%') 
-     OR LOWER(location) LIKE ('%uae%') 
-     OR LOWER(location) LIKE ('% united arab emirates')
-     OR LOWER(location) LIKE ('%dubai%') 
-     OR LOWER(location) LIKE ('%abu dhabi%') 
-     OR LOWER(location) LIKE ('%sharjah%') 
-     OR LOWER(location) LIKE ('%al Ain%') 
-     OR LOWER(location) LIKE ('%ajman%') 
-     OR LOWER(location) LIKE ('%ras alkhaimah%') 
-     OR LOWER(location) LIKE ('%fujairah%') 
-     OR LOWER(location) LIKE ('%Umm alquwain%')
-     OR LOWER(location) LIKE ('%syria%') 
-     OR LOWER(location) LIKE ('%damascus') 
-     OR LOWER(location) LIKE ('%latakia%') 
-     OR LOWER(location) LIKE ('%aleppo%') 
-     OR LOWER(location) LIKE ('al ladhiqiyah%') 
-     OR LOWER(location) LIKE ('%tunisia%') 
-     OR LOWER(location) LIKE ('%tunis') 
-     OR LOWER(location) LIKE ('%sfax%') 
-     OR LOWER(location) LIKE ('%sousse%') 
-     OR LOWER(location) LIKE ('%sosah%') 
-     OR LOWER(location) LIKE ('kairouan%') 
-     OR LOWER(location) LIKE ('ettadhamen%') 
-     OR LOWER(location) LIKE ('gabès%') 
-     OR LOWER(location) LIKE ('bizerte%') 
-     OR LOWER(location) LIKE ('aryanah%') 
-     OR LOWER(location) LIKE ('gafsa%') 
-     OR LOWER(location) LIKE ('%sfax%') 
-     OR LOWER(location) LIKE ('el mourouj%') 
-     OR LOWER(location) LIKE ('%jORdan%') 
-     OR LOWER(location) LIKE ('%amman%') 
-     OR LOWER(location) LIKE ('%zarqa') 
-     OR LOWER(location) LIKE ('%irbid') 
-     OR LOWER(location) LIKE ('%jerash') 
-     OR LOWER(location) LIKE ('%libya%') 
-     OR LOWER(location) LIKE ('%benghazi') 
-     OR LOWER(location) LIKE ('%tripoli') 
-     OR LOWER(location) LIKE ('%palestine%') 
-     OR LOWER(location) LIKE ('%ramallah') 
-     OR LOWER(location) LIKE ('%al quds') 
-     OR LOWER(location) LIKE ('%gaza') 
-     OR LOWER(location) LIKE ('%nablus') 
-     OR LOWER(location) LIKE ('%beit jala') 
-     OR LOWER(location) LIKE ('%lebanon%') 
-     OR LOWER(location) LIKE ('%beirut') 
-     OR LOWER(location) LIKE ('%tripoli')
-     OR LOWER(location) LIKE ('%sidon')
-     OR LOWER(location) LIKE ('%zahlé')
-     OR LOWER(location) LIKE ('%aley')
-     OR LOWER(location) LIKE ('%oman')
-     OR LOWER(location) LIKE ('%muscat')
-     OR LOWER(location) LIKE ('%salalah')
-     OR LOWER(location) LIKE ('%kuwait')
-     OR LOWER(location) LIKE ('%kuwait city')
-     OR LOWER(location) LIKE ('%mauritania')
-     OR LOWER(location) LIKE ('%nouakchott')
-     OR LOWER(location) LIKE ('%qatar')
-     OR LOWER(location) LIKE ('%doha')
-     OR LOWER(location) LIKE ('%doha')
-     OR LOWER(location) LIKE ('%bahrain')
-     OR LOWER(location) LIKE ('%manama')
-     OR LOWER(location) LIKE ('%muharraq')
-     OR LOWER(location) LIKE ('%comORos')
-     OR LOWER(location) LIKE ('%anjouan')
-     OR LOWER(location) LIKE ('%grande comORe')
-     OR LOWER(location) LIKE ('%mohéli')
-     OR LOWER(location) LIKE ('%yemen')
-     OR LOWER(location) LIKE ('%Sanaa%')
-     OR LOWER(location) LIKE ('%taizz')
-     OR LOWER(location) LIKE ('%djibouti')
-     OR LOWER(location) LIKE ('%djibouti city')
-     OR LOWER(location) LIKE ('%somalia%')
-     OR LOWER(location) LIKE ('%mogadishu') q
-     
-     WHERE LOWER(location) NOT LIKE ('%alexandria, va')
-     OR LOWER(location) NOT LIKE ('%alexandria, la')
-     OR LOWER(location) NOT LIKE ('%south sudan')
-     OR LOWER(location) NOT LIKE ('%jerusalem%')
-     OR LOWER(location) NOT LIKE ('%libya - tripoli')
-     OR LOWER(location) NOT LIKE ('%muscatine, IA');
-
-
-
-  ################################################################
-  ####################### TOTAL Popular Tags #####################
-  ################################################################
-
-  SELECT Tags.TagName, COUNT(Tags.TagName) FROM Posts, Tags WHERE Posts.OwnerUserId IN (
-    SELECT Users.Id FROM users WHERE LOWER(Users.Location ) LIKE ('%sudan%')
+WITH
+arab_users
+AS 
+(
+  SELECT id, Location FROM users 
+       WHERE LOWER(location) LIKE ('%sudan%')
        OR LOWER(Location) LIKE ('%khartoum%')
        OR LOWER(location) LIKE ('%bahri%')
        OR LOWER(location) LIKE ('%mORocco%') 
@@ -467,7 +343,29 @@
        OR LOWER(location) LIKE ('%djibouti')
        OR LOWER(location) LIKE ('%djibouti city')
        OR LOWER(location) LIKE ('%somalia%')
-       OR LOWER(location) LIKE ('%mogadishu') q
+       OR LOWER(location) LIKE ('%mogadishu')
+)
+
+  ################################################################
+  ################# TOTAL Arab Psots 103,908 #####################
+  ################################################################
+
+  SELECT COUNT(*) FROM Posts WHERE Posts.OwnerUserId IN (SELECT id FROM arab_users q
+     
+     WHERE LOWER(location) NOT LIKE ('%alexandria, va')
+     OR LOWER(location) NOT LIKE ('%alexandria, la')
+     OR LOWER(location) NOT LIKE ('%south sudan')
+     OR LOWER(location) NOT LIKE ('%jerusalem%')
+     OR LOWER(location) NOT LIKE ('%libya - tripoli')
+     OR LOWER(location) NOT LIKE ('%muscatine, IA'))
+
+
+  ################################################################
+  ####################### TOTAL Popular Tags #####################
+  ################################################################
+
+  SELECT Tags.TagName, COUNT(Tags.TagName) FROM Posts, Tags WHERE Posts.OwnerUserId IN (
+    SELECT Users.Id FROM arab_users q
        
        WHERE LOWER(location) NOT LIKE ('%alexandria, va')
        OR LOWER(location) NOT LIKE ('%alexandria, la')
@@ -476,6 +374,6 @@
        OR LOWER(location) NOT LIKE ('%libya - tripoli')
        OR LOWER(location) NOT LIKE ('%muscatine, IA'))
 
-        AND Tags.Id IN (SELECT TagId FROM PostTags WHERE PostId = Posts.Id)
-        GROUP BY Tags.TagName
-        ORDER BY COUNT(Tags.TagName) DESC;
+    AND Tags.Id IN (SELECT TagId FROM PostTags WHERE PostId = Posts.Id)
+    GROUP BY Tags.TagName
+    ORDER BY COUNT(Tags.TagName) DESC;
