@@ -1,17 +1,20 @@
-### We were wondering! How Arab's are contributing to Stackoverflow
+### How Arab's are contributing to Stackoverflow
 
 Check out the blog post at [eptikar.com/blog](http://eptikar.com/blog)
 
 #### How it works:
 
 **First:**
+=========
 
 We used the awesome data availabe at [data.stackexchange.com](http://data.stackexchange.com), using *SQL* to fetch related subsets of data.
 
-Users's *LOCATION* is an open feild in Stackoverflow database and there are about **47,835** unique location by the time of mkaing this study! so there is no way around nesting `LIKE` conditions on possible matches of the location, for example to pull users from Egypt we would have to do:
+Users's *LOCATION* is an open feild in Stackoverflow database and there are about **47,835** unique location by the time of makaing this study. 
+
+Using nested `LIKE` conditions we get possible matches of the location, for example to pull users from Egypt we would have to do:
 
 
-```
+```sql
 # Fetch users from Egypt
 
   SELECT * FROM users WHERE Location  LIKE '%Egypt%'
@@ -30,9 +33,13 @@ Users's *LOCATION* is an open feild in Stackoverflow database and there are abou
 
 *quiries.sql* contains the sql used to match users of the Arab countries
 
-*P.S: of course this could be refined to give more accurate results*
+
+*P.S:*
+
+*Of course this could be refined to give more accurate results*
 
 **Second:**
+===========
 
 We used *R* to make sense of the data using simple visulations, results are in the *graphs* directory
 
